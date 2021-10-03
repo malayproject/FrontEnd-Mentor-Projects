@@ -1,0 +1,183 @@
+*   {
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+body    {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(240, 78%, 98%);
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0px;
+    font-size: 15px;
+    color: hsl(233, 13%, 49%);
+}
+
+.subscriptionChoice {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 50px 0;
+    color: hsl(234, 14%, 74%);
+}
+
+.toggleContainer    {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    height: 32px;
+    width: 55px;
+    margin: 0 15px 0 15px;
+    border-radius: 16px;
+    position: relative;
+}
+
+.ball   {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    animation: slideRight 0.3s ease-in-out;
+    /* animation-name: slideRight;
+    animation-duration: 1s; */
+    /* transform: translateX(19px); */
+}
+
+.ball.annually   {
+    left: 4px;
+    animation: slideLeft 0.3s ease-in-out;
+    /* transition: slideLeft 2s ease; */
+    /* animation-name: slideLeft;
+    animation-duration: 1s; */
+    /* transform: translateX(-19px); */
+}
+
+@keyframes slideRight {
+    0%  { left: 4px; right: 27px;}
+    100%    { left: 27px; right: 4px;}
+}
+@keyframes slideLeft {
+    0%  { left: 27px; right: 4px;}
+    100%    { left: 4px; right: 27px;}
+}
+
+.priceContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: fit-content;
+    margin: 20px 0 20px 0;
+}
+
+.priceBox   {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8px 5px 8px 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.priceBox.inFocus   {
+    background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: hsl(240, 78%, 98%);
+    transform: scale(1.1);
+}
+
+.priceBox .subscriptionName {
+    padding: 30px 0 20px 0;
+    width: inherit;
+    text-align: center;
+    /* width: 90%; */
+}
+
+.priceBox.inFocus .subscriptionName{
+    color: hsl(240, 78%, 98%);
+}
+
+.priceBox .price    {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+    color: hsl(232, 13%, 33%);
+    width: 270px;
+    text-align: center;
+}
+
+.priceBox.inFocus .price {
+    color: white;
+}
+
+.priceBox .price.hide   {
+    display: none;
+}
+
+.priceBox .price .dollar{
+    font-size: 35px;
+    padding-right: 5px;
+}
+
+.priceBox ul   {
+    text-align: center;
+    padding: 0;
+    width: 80%;
+    border-bottom: 1px solid hsl(234, 14%, 92%);
+}
+.priceBox.inFocus ul{
+    border-bottom: 1px solid hsl(234, 14%, 80%);
+}
+
+.priceBox li    {
+    padding: 15px 0 15px 0;
+    width: 100%;
+    border-top: 1px solid hsl(234, 14%, 92%);
+}
+
+.priceBox.inFocus li{
+    border-top: 1px solid hsl(234, 14%, 80%);
+}
+
+.priceBox button    {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    color: hsl(240, 78%, 98%);
+    width: 80%;
+    height: 30px;
+    border: 0px;
+    border-radius: 3px;
+    font-family: 'Montserrat', sans-serif;
+    border-top: hsl(240, 78%, 98%);
+    margin: 15px 0 15px 0;
+}
+
+.priceBox.inFocus button    {
+    background-color: hsl(240, 78%, 98%);
+}
+
+.attribution    {
+    margin-top: 250px;
+}
+
+@media screen and (max-width: 900px)   {
+    body {
+        min-height: 1600px
+    }
+    .priceContainer {
+        flex-direction: column;
+    }
+    .attribution{
+        margin-top: 150px;
+    }
+}
+
