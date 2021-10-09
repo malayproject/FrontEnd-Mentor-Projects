@@ -1,6 +1,7 @@
 *   {
     box-sizing: border-box;
     /* border: 1px solid black; */
+    cursor: default;
 }
 
 body    {
@@ -14,7 +15,37 @@ body    {
     min-height: 100vh;
     margin: 0px;
     font-size: 15px;
-    color: hsl(233, 13%, 49%);
+    color: hsl(233, 13%, 49%);    
+}
+
+body::before{
+    content: '';
+	background-image: url('./images/bg-top.svg');
+	background-repeat: no-repeat;
+	background-position: top right;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+body::after{
+    content: '';
+	background-image: url('./images/bg-bottom.svg');
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.title  {
+    margin-top: 100px;
 }
 
 .subscriptionChoice {
@@ -33,6 +64,8 @@ body    {
     margin: 0 15px 0 15px;
     border-radius: 16px;
     position: relative;
+    /* cursor: none; */
+    caret-color: transparent;
 }
 
 .ball   {
@@ -86,12 +119,26 @@ body    {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    caret-color: transparent;
 }
+
+.priceBoxInner  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: none;
+}
+
 
 .priceBox.inFocus   {
     background-image: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
     color: hsl(240, 78%, 98%);
     transform: scale(1.1);
+}
+
+.priceBox.inFocus > *   {
+    transform: scale(0.9091);
 }
 
 .priceBox .subscriptionName {
@@ -161,8 +208,11 @@ body    {
     margin: 15px 0 15px 0;
 }
 
-.priceBox.inFocus button    {
-    background-color: hsl(240, 78%, 98%);
+.inFocus button    {
+    background-color: white;
+    /* background-color: white; */
+    background-image: none;
+    color: hsl(237, 63%, 64%);
 }
 
 .attribution    {
@@ -175,6 +225,12 @@ body    {
     }
     .priceContainer {
         flex-direction: column;
+    }
+    .priceBox.inFocus   {
+        transform: scale(1);
+    }
+    .priceBox.inFocus > *   {
+        transform: scale(1);
     }
     .attribution{
         margin-top: 150px;
