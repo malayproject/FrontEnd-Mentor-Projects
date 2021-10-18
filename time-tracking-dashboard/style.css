@@ -1,0 +1,213 @@
+*   {
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+body    {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(226, 43%, 10%);
+}
+
+.mainContainer  {
+    display: grid;
+    grid-gap: 20px;
+    width: 80%;
+    height: 65%;
+    max-width: 1000px;
+    min-width: 900px;
+    max-height: 500px;
+    min-height: 450px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+.mainContainer > *  {
+    /* border: 1px solid red; */
+    border-radius: 15px;
+    background-color: hsl(235, 46%, 20%);
+}
+
+.leftContainer  {
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileContainer   {
+    width: 100%;
+    height: 72%;
+    /* border: 1px solid green; */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 12%;
+    background-color: hsl(246, 80%, 60%);
+    z-index: 2;
+}
+
+.profileContainer > *   {
+    /* border: 1px solid yellow; */
+}
+
+.profileContainer img{
+    margin: 10px 0 15px 0;
+}
+
+.profileContainer h5    {
+    margin: 25px 0 0 0;
+    font-weight: 300;
+    color: hsl(236, 100%, 87%);
+}
+
+.profileContainer h1    {
+    margin: 3px 0 3px 0;
+    font-weight: 300;
+    font-size: 36px;
+
+}
+
+.periodContainer    {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(17, 1fr);
+    align-content: center;
+    width: 100%;
+    height: 40%;
+    margin-top: -15px;
+    /* border: 1px solid yellow; */
+    border-radius: 13px;
+    z-index: 1;
+    background-color: hsl(235, 46%, 20%);
+}
+.periodContainer .daily {
+    grid-column: 1 / -1;
+    grid-row: 5 / span 4;
+}
+.periodContainer .weekly {
+    grid-column: 1 / -1;
+    grid-row:  9/ span 4;
+}
+.periodContainer .monthly {
+    grid-column: 1 / -1;
+    grid-row: 13 / span 4;
+}
+
+.periodContainer > *    {
+    /* border: 1px dotted white; */
+    padding: 5px 20px 5px 12%;
+    color: hsl(236, 100%, 87%);
+    font-weight: 300;
+}
+
+.periodContainer .daily:hover, .weekly:hover, .monthly:hover    {
+    color: white;
+}
+
+.reportContainer  {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+}
+.activityContainer  {
+    position: relative;
+}
+
+.activityContainer img    {
+    position: absolute;
+    right: 12px;
+    margin: -4px 0 0 0;
+    width: 60px;
+    height: 60px;
+    /* z-index: -2; */
+}
+
+.activityContainer.work   {
+    background-color: hsl(15, 100%, 70%);
+}
+
+.activityContainer.play   {
+    background-color: hsl(195, 74%, 62%);
+}
+
+.activityContainer.study   {
+    background-color: hsl(348, 100%, 68%);
+}
+
+.activityContainer.exercise   {
+    background-color: hsl(145, 58%, 55%);
+}
+
+.activityContainer.social   {
+    background-color: hsl(264, 64%, 52%);
+}
+
+.activityContainer.self-care   {
+    background-color: hsl(43, 84%, 65%);
+}
+
+.dataTile   {
+    position: absolute;
+    bottom: -1px;
+    height: 85%;
+    width: 100%;
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 14px;
+    padding: 10%;
+}
+
+.dataTile:hover {
+    background-color: hsl(235, 45%, 61%);
+}
+
+.titleNEllipsis {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2% 0 10% 0;
+}
+
+.titleNEllipsis .title  {
+    font-size: 18px;
+}
+
+.titleNEllipsis img {
+    margin-right: 5%;
+    margin-left: auto;
+    width: 15px;
+    height: 3px;
+}
+.titleNEllipsis img:hover {
+    color: white;
+}
+
+.currHours  {
+    padding: 10% 0 7% 0;
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.lastPeriod  {
+    padding: 0 0 10% 0;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.attribution    {
+    position: absolute;
+    bottom: 10px;
+}
+
+
+/* @media screen and (max-width: 530px)  {
+    .mainContainer  {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 1fr);
+        min-width: 320px;
+    }
+} */
